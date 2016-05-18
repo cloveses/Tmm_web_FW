@@ -1,0 +1,11 @@
+<%inherit file="base.html"/>
+<%block name="title">Index</%block>
+<%block name="main">
+    <h2>Index</h2>
+    %if not current_user:
+    <a href="/login">login or signup</a>
+    %else:
+    welcome ${current_user}!<a href="/logout">logout</a>
+    ${hint_info}
+    %endif
+</%block>

@@ -1,0 +1,22 @@
+<%inherit file="base.html"/>
+<%block name="title">Login</%block>
+<%block name="main">
+    <h2>Login or signup</h2>
+    <p>${hint_info}</p>
+    <form method="post">
+        ${xsrf_form_html()}
+        action:
+        <select name="action">
+            <option value="login" selected>login</option>
+            <option value="sign">sign</option>
+        </select>
+        name:
+        <input type="text" name="name" />
+        password:
+        <input type="password" name="passwd" />
+        verify text:
+        <input type="text" name="vf_txt" />
+        <img src="/captcha?key=${v_key}"/>
+        <input type="submit" name="" value="submit" />
+    </form>
+</%block>
